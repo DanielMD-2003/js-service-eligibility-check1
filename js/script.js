@@ -1,3 +1,4 @@
+"use strict";
 // Husk fra dag 1: skriv "use strict" herunder
 
 
@@ -5,6 +6,16 @@ function tjekGratisService(brand, year) {
 
     // let, fordi værdien kan ændre sig nedenfor
     let harGratisService = false;
+
+    if ( (brand === `Volkswagen` || brand === `Skoda`)  && (year > 2023) ) {
+        harGratisService = true;
+        console.log (`${brand} fra ${year} får gratis service i 1 år.`);
+    }
+    
+    else {
+        harGratisService = false;
+        console.log (`${brand} fra ${year} får ikke gratis service.`)
+    }
 
     // Skriv if/else-strukturen selv herinde, ligesom i klasseøvelsen.
     //
@@ -17,6 +28,8 @@ function tjekGratisService(brand, year) {
 
 }
 
+
+
 tjekGratisService(`Volkswagen`, 2024);
 tjekGratisService(`Skoda`, 2020);
 tjekGratisService(`Tesla`, 2025);
@@ -24,4 +37,3 @@ tjekGratisService(`Tesla`, 2025);
 // Prøv selv (efter du har løst opgaven): ret "let harGratisService" til "const harGratisService"
 // ovenfor, og kør koden igen. Se hvilken fejl du får i konsollen, og hvorfor - genkender du
 // situationen fra klasseøvelsen? Ret den tilbage til "let", når du har set fejlen.
- 
